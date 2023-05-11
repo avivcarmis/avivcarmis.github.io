@@ -1,0 +1,46 @@
+# Site settings
+title: Aviv Carmi Blog
+description: Software Engineer
+slogan: "Sorry.<br />I just can't stop talking."
+url: 'http://joshgerdes.com/jekyll-uno'
+baseurl: ''
+# google_analytics: 'UA-XXXXXX-X'
+
+author:
+  name: Aviv Carmi
+  email: avivcarmis@gmail.com
+
+defaults:
+  -
+    scope:
+      path: ''
+      type: 'posts'
+    values:
+        layout: 'post'
+
+# Build settings
+destination: _site
+paginate: 10
+permalink: /:title/
+markdown: kramdown
+highlighter: rouge
+
+sass:
+    sass_dir: _sass
+    style: compressed
+
+kramdown:
+  # use Github Flavored Markdown
+  input: GFM
+  # do not replace newlines by <br>s
+  hard_wrap: false
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
+
+plugins: ['jekyll-paginate']
+exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'LICENSE', 'docker-compose.yml', '.gitignore']

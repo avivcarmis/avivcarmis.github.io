@@ -1,0 +1,45 @@
+---
+layout: default
+---
+<article class="post-container post-container--single">
+  <div class="post-header">
+    <div class="post-meta">
+      <time datetime="{{ page.date | date: "%Y-%m-%d %H:%M" }}" class="post-meta__date date">{{ page.date | date: "%-d %b %Y" }}</time>
+      &#8226;
+      <span class="post-list__meta--date date">{% include read_time.html content=page.content %}</span>
+      &#8226;
+      <span class="post-meta__tags">{% for tag in page.tags %}<a href="{{ site.baseurl }}/tags/#{{ tag }}">{{ tag }}</a>{% if forloop.last == false %}, {% endif %}{% endfor %}</span>
+    </div>
+    <h1 class="post-title">{{ page.title }}</h1>
+    <div class="main-image-wrapper">
+      <img src="{{ site.baseurl }}/{{ page.image }}" alt="{{ page.title }}"/>
+    </div>
+  </div>
+
+  <section class="post">
+    {{ content }}
+    <hr class="post-list__divider">
+  </section>
+</article>
+
+<div class="main">
+  {% assign same_series = site.posts | where:"series", page.series %}
+
+  {% assign next_posts = same_series | where_exp: "post", "post.date > page.date" %}
+  {% assign more_in_series = same_series | where_exp: "post", "post != page" %}
+
+  {% assign next_posts_size = next_posts | size %}
+  {% assign more_in_series_size = more_in_series | size %}
+
+  {% if page.series and next_posts_size > 0 %}
+    <h2>Next Posts</h2>
+    {% assign next_posts_reverse = next_posts | reverse %}
+    {% include post-links.html posts=next_posts_reverse limit=2 %}
+  {% elsif page.series and more_in_series_size > 0 %}
+    <h2>More In This Series</h2>
+    {% include post-links.html posts=more_in_series limit=2 %}
+  {% else %}
+    <h2>More Posts</h2>
+    {% include post-links.html posts=site.posts limit=2 %}
+  {% endif %}
+</div>

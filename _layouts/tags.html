@@ -1,0 +1,19 @@
+---
+layout: default
+---
+<div class="main">
+  <h1>Tags</h1>
+  <div class="tags">
+  {% for tagitem in site.tags  %}
+    <a href="#{{ tagitem[0] }}">{{  tagitem[0] }}</a>
+  {% endfor %}
+  </div>
+
+  {% for tagitem in site.tags %}
+    <div id="{{ tagitem[0] }}">
+      <h2>Tag: {{ tagitem[0] }}</h2>
+      {% assign list = site.posts | where_exp: "post", "post.tags contains tagitem[0]" %}
+      {% include post-links.html posts=list %}
+    </div>
+  {% endfor %}
+</div>

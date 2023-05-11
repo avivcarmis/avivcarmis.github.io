@@ -1,0 +1,19 @@
+---
+layout: default
+---
+<div class="main">
+  <h1>Categories</h1>
+  <div class="categories">
+  {% for catitem in site.categories  %}
+    <a href="#{{ catitem[0] }}">{{  catitem[0] }}</a>
+  {% endfor %}
+  </div>
+
+  {% for catitem in site.categories %}
+    <div id="{{ catitem[0] }}">
+      <h2>Category: {{ catitem[0] }}</h2>
+      {% assign list = site.posts | where_exp: "post", "post.categories contains catitem[0]" %}
+      {% include post-links.html posts=list %}
+    </div>
+  {% endfor %}
+</div>

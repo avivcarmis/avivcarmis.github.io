@@ -1,1 +1,23 @@
-<div>hi</div>
+---
+layout: default
+robots: noindex
+---
+<div class="hello">
+    <div class="main-title">Hi there <span class="small-emoji">👋</span></div>
+    <p class="main-description">
+        My name is Aviv, I'm a software engineer located in Tel-Aviv.<br/>
+        I'm a backend architect at <a href="https://www.humansecurity.com/">HUMAN</a>.<br/>
+        We handle huge scales of traffic, and tackle complex design challenges.<br/>
+        If you want to hear more, you can <a href="mailto:avivcarmis@gmail.com">reach me by mail</a> or read about our <a href="https://www.humansecurity.com/company/careers">open positions</a>.
+    </p>
+</div>
+<div class="main">
+    <div class="main-post-list">
+
+        {% assign list = site.posts %}
+        {% include post-links.html posts=list %}
+
+        <hr class="post-list__divider ">
+
+    </div>
+</div>

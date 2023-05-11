@@ -1,0 +1,28 @@
+<ol class="post-list">
+    {% for post in include.posts limit:include.limit %}
+    <li>
+        <a href="{{ site.baseurl }}{{ post.url }}" title="{{ post.title }}" class="post-link">
+            <div class="preview">
+                <div class="preview__text">
+                    <div class="post-list__post-title post-title">{{ post.title }}</div>
+                    <p class="excerpt">{{ post.excerpt | strip_html | strip_newlines | truncatewords: 35 }}</p>
+                </div>
+                <div class="preview__image">
+                    <img src="{{ site.baseurl }}/{{ post.image }}" alt="post.description">
+                </div>
+            </div>
+        </a>
+        <div class="post-list__meta">
+            <time datetime="{{ post.date | date: "%Y-%m-%d %H:%M" }}" class="post-list__meta--date date">{{ post.date | date: "%-d %b %Y" }}</time>
+            &#8226;
+            <span class="post-list__meta--date date">{% include read_time.html content=post.content %}</span>
+            &#8226;
+            <span class="post-meta__tags">
+                {% for category in post.categories limit:2 %}<a href="{{ site.baseurl }}/categories/#{{ category }}">{{ category }}</a>
+                {% if forloop.last == false %}, {% endif %}{% endfor %}
+            </span>
+        </div>
+        <hr class="post-list__divider">
+    </li>
+    {% endfor %}
+</ol>

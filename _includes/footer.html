@@ -1,0 +1,211 @@
+<footer class="diagonal">
+  <div class="container">
+    <div class="footer-columns">
+      <ul class="footer-links">
+        <li>
+          <h4>Pages</h4>
+        </li>
+        <li><a href="{{ site.baseurl }}/">Home</a></li>
+        <li><a href="{{ site.baseurl }}/tags">Tags</a></li>
+        <li><a href="{{ site.baseurl }}/categories">Categories</a></li>
+      </ul>
+
+      <ul class="footer-links">
+        <li>
+          <h4>Find Me</h4>
+        </li>
+
+        <li>
+          <a href="https://www.github.com/avivcarmis" title="avivcarmis on GitHub">
+            <i class="icon icon-social-github"></i>
+            GitHub
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.linkedin.com/in/avivcarmis" title="avivcarmis on LinkedIn">
+            <i class="icon icon-social-linkedin"></i>
+            LinkedIn
+          </a>
+        </li>
+
+        <li>
+          <a href="https://medium.com/@avivcarmis" title="@avivcarmis on Medium">
+            <i class="icon icon-social-medium"></i>
+            Medium
+          </a>
+        </li>
+
+        <li>
+          <a href="https://twitter.com/avivcarmis" title="@avivcarmis on Twitter">
+            <i class="icon icon-social-twitter"></i>
+            Twitter
+          </a>
+        </li>
+
+        <li>
+          <a href="https://stackoverflow.com/users/1932186/aviv-carmi" title="Aviv Carmi on Stack Overflow">
+            <i class="icon icon-social-stack-overflow"></i>
+            Stack Overflow
+          </a>
+        </li>
+
+        <li>
+          <a href="mailto:{{ site.author.email }}" title="Email {{ site.author.email }}">
+            <i class="icon icon-mail"></i>
+            Email
+          </a>
+        </li>
+
+
+      </ul>
+
+      <ul class="footer-links">
+        <li>
+          <h4>Aviv Carmi</h4>
+        </li>
+        <li>{{ site.slogan }}</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="legal-line">
+    <p class="container">
+      &copy; {{ site.time | date: '%Y' }}
+      &bull;
+      Aviv Carmi
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+  var codeBlocks = document.querySelectorAll('pre.highlight');
+
+  codeBlocks.forEach(function (codeBlock) {
+    var copyButton = document.createElement('button');
+    copyButton.className = 'copy enabled';
+    copyButton.type = 'button';
+    copyButton.ariaLabel = 'Copy code to clipboard';
+    copyButton.innerHTML = '<i class="icon icon-page-copy"></i>';
+
+    codeBlock.append(copyButton);
+
+    copyButton.addEventListener('click', function () {
+      if (this.className === 'copy') {
+        return;
+      }
+      var code = codeBlock.querySelector('.rouge-code').innerText.trim();
+      window.navigator.clipboard.writeText(code);
+
+      copyButton.innerHTML = '<i class="icon icon-check"></i><span>Copied</span>';
+      copyButton.className = 'copy';
+      var fourSeconds = 4000;
+
+      setTimeout(function () {
+        copyButton.innerHTML = '<i class="icon icon-page-copy"></i>';
+        copyButton.className = 'copy enabled';
+      }, fourSeconds);
+    });
+  });
+</script>
+<script>
+  var images = document.querySelectorAll('.post img');
+
+  images.forEach(function (image) {
+    var wrapper = document.createElement("div");
+    wrapper.className = 'image-wrapper';
+
+    var alt = document.createElement("div");
+    alt.className = 'description-text';
+    alt.innerText = image.alt;
+
+    image.parentNode.insertBefore(wrapper, image);
+    image.parentNode.removeChild(image);
+    wrapper.appendChild(image);
+    wrapper.appendChild(alt);
+  });
+</script>
+<script>
+  var anchors = document.querySelectorAll('.post h1, .post h2, .post h3, .post h4, .post h5, .post h6');
+
+  anchors.forEach(function (anchor) {
+    var link = document.createElement("a");
+    link.className = 'header-link';
+    link.href = '#' + anchor.id;
+    link.title = 'Permalink';
+    link.innerHTML = '<i class="icon icon-link"></i>';
+
+    anchor.appendChild(link);
+  });
+</script>
+<script>
+  var codeBlocks = document.querySelectorAll('pre.highlight .rouge-code pre');
+
+  codeBlocks.forEach(function (codeBlock, blockId) {
+
+    var lines = [];
+    var currentLine = [];
+    codeBlock.childNodes.forEach(function (child) {
+      if (child.nodeType === Node.TEXT_NODE && child.textContent.indexOf('\n') > -1) {
+        var parts = child.textContent.split('\n');
+        for (var i = 0; i < parts.length; i++) {
+          var text = parts[i];
+          if (text) {
+            currentLine.push(document.createTextNode(text));
+          }
+          if (i < parts.length - 1) {
+            lines.push(currentLine);
+            currentLine = [];
+          }
+        }
+      } else {
+        currentLine.push(child);
+      }
+    });
+    lines.push(currentLine);
+
+    codeBlock.innerHTML = '';
+    lines.forEach(function (line, lineId) {
+      var lineElement = document.createElement("span");
+      lineElement.class = 'code-line';
+      lineElement.id = 'block-' + (blockId + 1) + '-line-' + (lineId + 1);
+      line.forEach(function (node) {
+        lineElement.appendChild(node);
+      });
+      codeBlock.appendChild(lineElement);
+      if (lineId < lines.length - 1) {
+        codeBlock.appendChild(document.createTextNode('\n'));
+      }
+    });
+
+  });
+
+  var codeBlockLineNumbers = document.querySelectorAll('pre.highlight pre.lineno');
+
+  codeBlockLineNumbers.forEach(function (block, blockId) {
+    var values = block.textContent.split('\n');
+    block.innerHTML = '';
+    values.forEach(function (value, lineId) {
+      var link = document.createElement("a");
+      link.href = '#block-' + (blockId + 1) + '-line-' + (lineId + 1);
+      link.innerText = value;
+      block.appendChild(link);
+      if (lineId < values.length - 1) {
+        block.appendChild(document.createTextNode('\n'));
+      }
+    });
+  });
+
+</script>
+{% if site.google_analytics and jekyll.environment != "development" %}
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '{{ site.google_analytics }}', 'auto');
+  ga('send', 'pageview');
+</script>
+{% endif %}
