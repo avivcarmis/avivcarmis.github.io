@@ -235,7 +235,8 @@ div.highlighter-rouge, .hello {
 .hello {
   margin-top: -50px;
   margin-bottom: 40px;
-  padding: 20px;
+  padding: 40px 20px;
+  text-align: center;
 
   p {
     margin: 0;
@@ -1105,6 +1106,7 @@ a.post-link, .tags a, .categories a {
   }
 
   .hello {
+    text-align: left;
     padding: 80px;
     font-size: 21px;
     margin-bottom: 80px;

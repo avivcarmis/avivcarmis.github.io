@@ -12,7 +12,7 @@
 
       <ul class="footer-links">
         <li>
-          <h4>Find Me</h4>
+          <h4 id="find">Find Me</h4>
         </li>
 
         <li>
@@ -78,7 +78,7 @@
   </div>
 </footer>
 
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- add copy button -->
 <script>
   var codeBlocks = document.querySelectorAll('pre.highlight');
 
@@ -109,6 +109,8 @@
     });
   });
 </script>
+
+<!-- wrap images -->
 <script>
   var images = document.querySelectorAll('.post img');
 
@@ -126,6 +128,8 @@
     wrapper.appendChild(alt);
   });
 </script>
+
+<!-- add header links -->
 <script>
   var anchors = document.querySelectorAll('.post h1, .post h2, .post h3, .post h4, .post h5, .post h6');
 
@@ -139,6 +143,8 @@
     anchor.appendChild(link);
   });
 </script>
+
+<!-- add code links -->
 <script>
   var codeBlocks = document.querySelectorAll('pre.highlight .rouge-code pre');
 
@@ -198,6 +204,19 @@
   });
 
 </script>
+
+<!-- links in new window -->
+<script>
+  var links = document.querySelectorAll('.post a');
+
+  links.forEach(function (link) {
+    if (link.host !== window.location.host) {
+      link.target = '_blank';
+    }
+  });
+</script>
+
+<!-- google analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-863ZE0XJK8"></script>
 <script>
   window.dataLayer = window.dataLayer || [];

@@ -23,6 +23,17 @@ layout: default
 </article>
 
 <div class="main">
+  <script>
+    var idcomments_acct = 'b97b56608cf94afb10fdeedf7686f168';
+    var idcomments_post_id;
+    var idcomments_post_url;
+  </script>
+  <span id="IDCommentsPostTitle" style="display:none"></span>
+  <script type='text/javascript' src='https://www.intensedebate.com/js/genericCommentWrapperV2.js'></script>
+  <hr class="post-list__divider">
+</div>
+
+<div class="main">
   {% assign same_series = site.posts | where:"series", page.series %}
 
   {% assign next_posts = same_series | where_exp: "post", "post.date > page.date" %}
