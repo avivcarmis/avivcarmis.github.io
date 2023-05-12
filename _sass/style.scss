@@ -1118,6 +1118,9 @@ a.post-link, .tags a, .categories a {
     padding: 80px;
     font-size: 21px;
     margin-bottom: 80px;
+    p {
+      max-width: 800px;
+    }
   }
 
   .preview {
