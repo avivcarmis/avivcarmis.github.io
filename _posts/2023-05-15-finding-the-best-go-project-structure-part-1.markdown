@@ -15,7 +15,7 @@ It's been almost four years since I published [an article]({% post_url 2019-05-1
 
 Over time, I've noticed I rarely meet Gophers who used Go as their native language. Most of us came from other languages and it's easy enough to see based on how we write and structure our Go code. Ex-Java devs tend to write more OOP style or name method receivers `this`. Ex-C, JS, or Python devs also tend to preserve their own habits during the first couple of years. I like to say that Go is a *language of immigrants*.
 
-Go itself is still far away from having a standard for structural guidelines. While it can sometimes be nice and approachable, other times standards can be counterproductive. A set of best practices, pros and cons, and a predetermined structure can reduce cognitive loadand help developers focus on the business value we're trying to achieve.
+Go itself is still far away from having a standard for structural guidelines. While it can sometimes be nice and approachable, other times it can be counterproductive. A set of best practices, pros and cons, and a predetermined structure can reduce cognitive loadand help developers focus on the business value we're trying to achieve.
 
 The original article presented three possible approaches for structuring Go code. If you haven't already, I suggest [going back and reading the full article]({% post_url 2019-05-19-ok-lets-go-three-approaches-to-structuring-go-code %}), but here's a (very) quick recap:
 
