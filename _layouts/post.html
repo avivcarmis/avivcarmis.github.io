@@ -18,20 +18,14 @@ layout: default
 
   <section class="post">
     {{ content }}
+    {% if page.medium %}
+    <div class="comments">
+      Comment on this post at <a href="{{ page.medium }}" class="no-target">Medium</a>
+    </div>
+    {% endif %}
     <hr class="post-list__divider">
   </section>
 </article>
-
-<div class="main">
-  <script>
-    var idcomments_acct = 'b97b56608cf94afb10fdeedf7686f168';
-    var idcomments_post_id;
-    var idcomments_post_url;
-  </script>
-  <span id="IDCommentsPostTitle" style="display:none"></span>
-  <script type='text/javascript' src='https://www.intensedebate.com/js/genericCommentWrapperV2.js'></script>
-  <hr class="post-list__divider">
-</div>
 
 <div class="main">
   {% assign same_series = site.posts | where:"series", page.series %}

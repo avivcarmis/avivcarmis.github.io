@@ -1,4 +1,5 @@
 ---
+medium: https://medium.com/@avivcarmis/ok-lets-go-three-approaches-to-structuring-go-code-42e2370c3ae5
 date: 2019-05-19 12:04:23
 title:  "OK Let’s Go: Three Approaches for Structuring Go Code"
 description: Three Approaches for Structuring Go Code

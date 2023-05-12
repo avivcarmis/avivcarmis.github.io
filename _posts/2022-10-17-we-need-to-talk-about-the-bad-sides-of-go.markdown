@@ -1,4 +1,5 @@
 ---
+medium: https://itnext.io/we-need-to-talk-about-the-bad-sides-of-go-568a1e5adbc6
 date: 2022-10-17 11:11:42
 title: We Need To Talk About The Bad Sides of Go
 description: The downsides of the Go programming language

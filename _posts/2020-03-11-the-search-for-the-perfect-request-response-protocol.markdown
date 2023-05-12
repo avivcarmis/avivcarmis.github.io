@@ -1,4 +1,5 @@
 ---
+medium: https://medium.com/perimeterx/rpc-olympics-the-search-for-the-perfect-rpc-protocol-269ae97f59cc
 date: 2020-03-11 17:14:06
 title: Request-Response Olympics — The Search For The Perfect Request-Response Protocol
 description: The Search For The Perfect Request-Response Protocol

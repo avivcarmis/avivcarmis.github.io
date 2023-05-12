@@ -1,4 +1,5 @@
 ---
+medium: https://medium.com/perimeterx/boosting-up-json-performance-of-unstructured-structs-in-go-5c2f2a017148
 date: 2022-07-12 12:44:15
 title: Boosting Up JSON Performance of Unstructured Structs in Go
 description: Presenting the Go Marshmallow library use case

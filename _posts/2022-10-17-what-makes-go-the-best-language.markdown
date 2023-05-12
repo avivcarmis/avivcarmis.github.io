@@ -1,4 +1,5 @@
 ---
+medium: https://itnext.io/a-proposition-for-a-better-future-for-go-a0d0b43d086a
 date: 2022-10-17 11:10:32
 title: What Makes Go the Best Language
 description: The upsides of the Go programming language

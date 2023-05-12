@@ -210,7 +210,7 @@
   var links = document.querySelectorAll('.post a');
 
   links.forEach(function (link) {
-    if (link.host !== window.location.host) {
+    if (link.host !== window.location.host && link.className.indexOf('no-target') === -1) {
       link.target = '_blank';
     }
   });
