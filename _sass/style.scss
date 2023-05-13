@@ -32,6 +32,10 @@ body {
   margin-right: 20px;
 }
 
+.post p {
+  word-break: break-word;
+}
+
 .main {
   margin: 0 20px;
   max-width: none;
@@ -377,6 +381,11 @@ pre code {
   border-radius: 3px;
   text-align: center;
   color: #FFF;
+}
+
+.footer-slogan {
+  color: #606060;
+  font-size: 14px;
 }
 
 .content-wrapper__inner {

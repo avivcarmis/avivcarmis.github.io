@@ -1,5 +1,5 @@
 ---
-date: 2023-05-09 13:12:37
+date: 2023-05-15 13:12:37
 title: Finding The Best Go Project Structure - Part 1
 description: Exploring structuring approaches
 image: images/posts/finding-the-best-go-project-structure-part-1/go-project-structure-logo.png
@@ -15,7 +15,7 @@ It's been almost four years since I published [an article]({% post_url 2019-05-1
 
 Over time, I've noticed I rarely meet Gophers who used Go as their native language. Most of us came from other languages and it's easy enough to see based on how we write and structure our Go code. Ex-Java devs tend to write more OOP style or name method receivers `this`. Ex-C, JS, or Python devs also tend to preserve their own habits during the first couple of years. I like to say that Go is a *language of immigrants*.
 
-Go itself is still far away from having a standard for structural guidelines. While it can sometimes be nice and approachable, other times it can be counterproductive. A set of best practices, pros and cons, and a predetermined structure can reduce cognitive loadand help developers focus on the business value we're trying to achieve.
+Go itself is still far away from having a standard for structural guidelines. While a lack of standards can sometimes be nice and approachable, other times it can be counterproductive. A set of best practices, pros and cons, and a predetermined structure can reduce cognitive load and help developers focus on the business value we're trying to achieve.
 
 The original article presented three possible approaches for structuring Go code. If you haven't already, I suggest [going back and reading the full article]({% post_url 2019-05-19-ok-lets-go-three-approaches-to-structuring-go-code %}), but here's a (very) quick recap:
 
@@ -27,7 +27,7 @@ This is broad and unopinionated enough to pass the test of time. Reading it toda
 
 Since the release of the previous article, my company and I have gained tremendous experience with writing and structuring Go code. Over this period, we've had continuous, thorough discussions about the pros and the cons of every decision we've made, and later held retros to review the impact of those decisions. We've had the chance to course-correct, try out different directions, and draw important conclusions. Below, I'll present the structure we use internally today, and work our way through the decisions we've made along the way.
 
-Note: I should mention that *what works for us may not necessarily work for others*. I will present the considerations driving us toward each decision, as we mainly write backend applications that handle massive scale, huge data, and real-time decision-making. Other use cases may require other considerations. **Make sure you examine your decisions from the perspective of your use case** and apply them accordingly.
+> I should mention that what works for us may not necessarily work for others. I will present the considerations driving us toward each decision, as we mainly write backend applications that handle massive scale, huge data, and real-time decision-making. Other use cases may require other considerations. **Make sure you examine your decisions from the perspective of your use case** and apply them accordingly.
 
 ### Structuring Approach
 
@@ -122,7 +122,7 @@ One thing was clear: coupled packages structuring is a solid approach. It provid
 
 #### Reusability Issues
 
-Initially, we defined reusability as the ability to share and move code *between different projects*. While we still agreed this was a luxury, we missed a far more important feature of reusability: the ability to share and move code *within the project itself*.
+Initially, we defined reusability as the ability to share and move code **between different projects**. While we still agreed this was a luxury, we missed a far more important feature of reusability: the ability to share and move code **within the project itself**.
 
 In coupled packages projects, sharing and reusing code is simply unsafe due to the usage of global variables. Let's see an example. Suppose we have an HTTP server exposing some secret value for users who provide a valid token. We want the HTTP port and the token to be provided via environment variables. For this, we create a config package:
 
@@ -190,7 +190,7 @@ func (s *SecretServer) getSecret(writer http.ResponseWriter, request *http.Reque
 }
 ```
 
-If you're experienced enough, you might see the bug here. I mistakenly updated everything *except for the secret itself*. This small issue can easily create *catastrophic effects* on a business. Angry customers, blocked users, unresponsive servers, etc.
+If you're experienced enough, you might see the bug here. I mistakenly updated everything **except for the secret itself**. This small issue can easily create *catastrophic effects* on a business. Angry customers, blocked users, unresponsive servers, etc.
 
 What can we do? The usage of global variables is what's causing this issue. Blocking the ability of the HTTP server to directly pull these config values would have forced you to have everything parameterized in the first place. Remember the tradeoff? A bit more ceremony when writing and maintaining code? The result is not merely "reusability". It's about safety and assurance, The ability to easily reason about code, and reuse it without unnecessary risk.
 
@@ -227,7 +227,7 @@ func UserAndTasksByID(userID string) (*db.User, []*db.Task) {
 }
 ```
 
-In this example, `core.UserAndTasksByID` depends on both `db.UserDB` and `db.UserTasksDB`. It assumes both are initialized and ready to operate. You can document the dependencies in various ways, but documentation tends to grow outdated or unread. More importantly, they don't provide any ability for compile time enforcement. If those two packages can't communicate directly, the core layer must receive its dependencies as arguments. This pattern provides documentation (or better yet, a contract). But more importantly, *compiler enforcement over dependency usage.*
+In this example, `core.UserAndTasksByID` depends on both `db.UserDB` and `db.UserTasksDB`. It assumes both are initialized and ready to operate. You can document the dependencies in various ways, but documentation tends to grow outdated or unread. More importantly, they don't provide any ability for compile time enforcement. If those two packages can't communicate directly, the core layer must receive its dependencies as arguments. This pattern provides documentation (or better yet, a contract). But more importantly, **compiler enforcement over dependency usage.**
 
 #### Changing Our Approach
 
@@ -237,7 +237,7 @@ Over the last couple of years, we've been writing and migrating to the independe
 
 ### What's Next?
 
-In the second part of our series, we'll discuss architectural design, package structure, and directory structure.
+In the [second part of our series]({% post_url 2023-05-15-finding-the-best-go-project-structure-part-2 %}), we'll discuss architectural design, package structure, and directory structure.
 
 ### Connecting All The Dots
 

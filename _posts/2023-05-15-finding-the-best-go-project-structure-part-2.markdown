@@ -1,5 +1,5 @@
 ---
-date: 2023-05-09 13:19:21
+date: 2023-05-15 13:19:21
 title: Finding The Best Go Project Structure - Part 2
 description: Explore architectural design, package structure, and directory structure
 image: images/posts/finding-the-best-go-project-structure-part-2/go-project-structure-logo.png
@@ -9,7 +9,7 @@ series: go-project-structure
 ---
 TL;DR: This is a story about the internal journey we had in [HUMAN](https://www.humansecurity.com/) Security to find the **best project structure for Go**, the decisions we've made, and the conclusions we've drawn. We've created an open-source [template repository](https://github.com/PerimeterX/go-project-structure) for the final structure, and a branch containing an [example project](https://github.com/PerimeterX/go-project-structure/tree/example) alongside. To use this template, fork the repository or [use it as a template](https://github.com/PerimeterX/go-project-structure/generate). To learn more about it, keep reading.
 
-> This is the second part of the story, for now. In the first part, we described how we came to define our structuring approach, what made us change our minds, and what our final decisions were. In this second part, we will discuss architectural design, package structure, and directory structure. Let's get to it.
+> This is the second part of the story, for now. In the [first part]({% post_url 2023-05-15-finding-the-best-go-project-structure-part-1 %}), we described how we came to define our structuring approach, what made us change our minds, and what our final decisions were. In this second part, we will discuss architectural design, package structure, and directory structure. Let's get to it.
 
 ### Structuring Architecture
 
@@ -43,10 +43,10 @@ We considered Clean architecture to be a very interesting approach, as it enable
 
 Also known as the "ports and adapters" pattern, hexagonal architecture divides software into two layers:
 
--   **External interfaces**, which is further divided into two:
--   **Ports** (inbound infrastructure, like an HTTP server, for example)
--   **Adapters** (outbound infrastructure, line HTTP client, for example)
--   **Business logic**
+- **External interfaces**, which is further divided into two:
+  - **Ports** (inbound infrastructure, like an HTTP server, for example)
+  - **Adapters** (outbound infrastructure, like an HTTP client, for example)
+- **Business logic**
 
 ![Hexagonal Architecture](/images/posts/finding-the-best-go-project-structure-part-2/hexagonal-architecture.png)
 
@@ -58,9 +58,9 @@ Hexagonal architecture also allows us to meet all the goals we've set. However, 
 
 #### Domain-Driven Design
 
-This approach is more complex and nuanced, and I like to say it contains both a *philosophy* for designing and approaching software and a *practical structure* to follow when developing it.
+This approach is more complex and nuanced, and I like to say it contains both a *philosophy* for designing and approaching software and a *practical structure* to follow when implementing it.
 
-As a brutally short overview of the philosophy behind it, I'll mention that according to DDD, each software belongs to a specific business domain. This business domain is then modeled into software while continuously collaborating with domain experts using agreed-upon terminology.
+As a _brutally_ short overview of the philosophy behind it, I'll mention that according to DDD, each software belongs to a specific business domain. This business domain is then modeled into software while continuously collaborating with domain experts using agreed-upon terminology.
 
 As to the practical structure, domain-driven design divides software into the following components:
 
