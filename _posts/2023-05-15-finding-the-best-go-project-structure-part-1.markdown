@@ -1,5 +1,5 @@
 ---
-date: 2023-05-15 13:12:37
+date: 2023-05-15 13:12:36
 title: Finding The Best Go Project Structure - Part 1
 description: Exploring structuring approaches
 image: images/posts/finding-the-best-go-project-structure-part-1/go-project-structure-logo.png

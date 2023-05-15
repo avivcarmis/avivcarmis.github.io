@@ -1,5 +1,5 @@
 ---
-date: 2023-05-15 13:19:21
+date: 2023-05-15 13:19:20
 title: Finding The Best Go Project Structure - Part 2
 description: Explore architectural design, package structure, and directory structure
 image: images/posts/finding-the-best-go-project-structure-part-2/go-project-structure-logo.png
