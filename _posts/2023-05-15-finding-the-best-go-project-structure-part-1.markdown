@@ -4,7 +4,7 @@ title: Finding The Best Go Project Structure - Part 1
 description: Exploring structuring approaches
 image: images/posts/finding-the-best-go-project-structure-part-1/go-project-structure-logo.png
 categories: [go, architecture]
-tags: [go, structure, architecture, clean-architecture, hexagonal-architecture, domain-driven-design, modular-design]
+tags: [go, structure, architecture]
 series: go-project-structure
 ---
 TL;DR: This is a story about the journey we've been on at [HUMAN](https://www.humansecurity.com/) Security to find the **best project structure for Go**, what decisions we've made based on our exploration, and the conclusions we've drawn. We've created an open-source [template repository](https://github.com/PerimeterX/go-project-structure) for the final structure, and a branch containing a tiny [example project](https://github.com/PerimeterX/go-project-structure/tree/example) alongside. To use this template, fork the repository or [use it as a template](https://github.com/PerimeterX/go-project-structure/generate). To learn more about it, keep reading.
