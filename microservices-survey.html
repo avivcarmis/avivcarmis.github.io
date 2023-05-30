@@ -1,0 +1,432 @@
+---
+layout: clean
+robots: noindex
+---
+<style>
+    .service {
+        padding: 20px;
+        background: #2b2b2b;
+        box-sizing: border-box;
+    }
+    .service h3 {
+        color: #ad5953;
+        margin-top: 0;
+        font-size: 32px;
+        margin-bottom: 12px;
+    }
+    .service p {
+        color: white;
+    }
+    @media (min-width: 768px) {
+        .service-wrapper {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .service {
+            flex: 0 0 calc(33.33% - 10px);
+            margin-bottom: 10px;
+        }
+    }
+    @media (max-width: 767px) {
+        .service {
+            margin-bottom: 10px;
+        }
+    }
+</style>
+<div class="main">
+    <script>
+        var data = [
+            [
+                {
+                    "name": "Social Service",
+                    "description": "The Social Service is managing the entire social app. It serves user requests for managing users, posts, and search, as well as handling async events like validation and user notifications, and it performs offline ETLs and aggregation pipelines."
+                }
+            ],
+            [
+                {
+                    "name": "API Service",
+                    "description": "The API Service is responsible for serving user requests. It manages users, posts, and search requests by using pre-aggregated data."
+                },
+                {
+                    "name": "Offline Service",
+                    "description": "The Offline Service is responsible for all non-API operations. It handles async events like validation and user notifications, and it performs offline ETLs and aggregation pipelines."
+                }
+            ],
+            [
+                {
+                    "name": "API Service",
+                    "description": "The API Service is responsible for serving user requests. It manages users, posts, and search requests by using pre-aggregated data."
+                },
+                {
+                    "name": "Event Service",
+                    "description": "The Event Service is responsible for handling async events and user notifications."
+                },
+                {
+                    "name": "Analytics Aggregations",
+                    "description": "An offline aggregation service responsible for performing ETL and aggregation queries."
+                }
+            ],
+            [
+                {
+                    "name": "User Management",
+                    "description": "This microservice handles user registration, authentication, and profile management."
+                },
+                {
+                    "name": "Post Service",
+                    "description": "The Post Service microservice enables users to create, edit, and delete posts on the social media platform."
+                },
+                {
+                    "name": "Notification Events",
+                    "description": "This microservice handles notification events."
+                },
+                {
+                    "name": "Search Service",
+                    "description": "The Search Service microservice facilitates searching for users, posts, hashtags, and trending topics."
+                },
+                {
+                    "name": "Analytics Aggregations",
+                    "description": "An offline aggregation service responsible for performing ETL and aggregation queries."
+                }
+            ],
+            [
+                {
+                    "name": "User Management",
+                    "description": "This microservice handles user registration, authentication, and profile management."
+                },
+                {
+                    "name": "Post Service",
+                    "description": "The Post Service microservice enables users to create, edit, and delete posts on the social media platform."
+                },
+                {
+                    "name": "Notification Events",
+                    "description": "This microservice handles notification events."
+                },
+                {
+                    "name": "Search Service",
+                    "description": "The Search Service microservice facilitates searching for users, posts, hashtags, and trending topics."
+                },
+                {
+                    "name": "Analytics Aggregations",
+                    "description": "An offline aggregation service responsible for performing ETL and aggregation queries."
+                },
+                {
+                    "name": "Friendship Service",
+                    "description": "The Friendship Service microservice manages friend connections between users."
+                },
+                {
+                    "name": "Content Moderation",
+                    "description": "The Content Moderation microservice operates on async events to ensures that user-generated content complies with the platform's community guidelines."
+                },
+                {
+                    "name": "Messaging Service",
+                    "description": "The Messaging Service microservice enables users to send direct messages to each other."
+                },
+                {
+                    "name": "Recommendation Engine",
+                    "description": "This is an offline service, analyzing user behavior, preferences, and interactions to provide personalized content recommendations."
+                },
+                {
+                    "name": "Authentication Service",
+                    "description": "The Authentication Service microservice handles user authentication and security."
+                }
+            ],
+            [
+                {
+                    "name": "User Management",
+                    "description": "This microservice handles user registration, authentication, and profile management."
+                },
+                {
+                    "name": "Post Service",
+                    "description": "The Post Service microservice enables users to create, edit, and delete posts on the social media platform."
+                },
+                {
+                    "name": "Notification Events",
+                    "description": "This microservice handles notification events."
+                },
+                {
+                    "name": "Search Service",
+                    "description": "The Search Service microservice facilitates searching for users, posts, hashtags, and trending topics."
+                },
+                {
+                    "name": "Analytics Aggregations",
+                    "description": "An offline aggregation service responsible for performing ETL and aggregation queries."
+                },
+                {
+                    "name": "Friendship Service",
+                    "description": "The Friendship Service microservice manages friend connections between users."
+                },
+                {
+                    "name": "Content Moderation",
+                    "description": "The Content Moderation microservice operates on async events to ensures that user-generated content complies with the platform's community guidelines."
+                },
+                {
+                    "name": "Messaging Service",
+                    "description": "The Messaging Service microservice enables users to send direct messages to each other."
+                },
+                {
+                    "name": "Recommendation Engine",
+                    "description": "This is an offline service, analyzing user behavior, preferences, and interactions to provide personalized content recommendations."
+                },
+                {
+                    "name": "Authentication Service",
+                    "description": "The Authentication Service microservice handles user authentication and security."
+                },
+                {
+                    "name": "Group Management",
+                    "description": "The Group Management microservice allows users to create, join, and manage groups on the social media platform."
+                },
+                {
+                    "name": "Privacy Settings",
+                    "description": "The Privacy Settings microservice enables users to customize their privacy preferences and control who can view their profile and content."
+                },
+                {
+                    "name": "Geolocation Service",
+                    "description": "The Geolocation Service microservice utilizes location data to enable features like check-ins, location-based posts, and nearby friend suggestions."
+                },
+                {
+                    "name": "Hashtag Service",
+                    "description": "The Hashtag Service microservice handles the tagging and categorization of posts using hashtags."
+                },
+                {
+                    "name": "Advertising Platform",
+                    "description": "The Advertising Platform microservice enables targeted advertising on the social media app."
+                },
+                {
+                    "name": "Event Management",
+                    "description": "The Event Management microservice allows users to create and manage events on the social media platform."
+                },
+                {
+                    "name": "Content Sharing",
+                    "description": "The Content Sharing microservice enables users to share posts, photos, and videos on other social media platforms."
+                },
+                {
+                    "name": "Real-time Feeds",
+                    "description": "The Real-time Feeds microservice delivers real-time updates to users' feeds, ensuring that they stay up to date with the latest posts, comments, and activities."
+                },
+                {
+                    "name": "Data Analytics",
+                    "description": "The Data Analytics microservice collects and analyzes data from user interactions, posts, and engagement metrics."
+                },
+                {
+                    "name": "Audio/Video Streaming",
+                    "description": "The Audio/Video Streaming microservice enables users to stream and share live audio and video content on the social media platform."
+                }
+            ],
+            [
+                {
+                    "name": "User Management",
+                    "description": "This microservice handles user registration, authentication, and profile management."
+                },
+                {
+                    "name": "Post Service",
+                    "description": "The Post Service microservice enables users to create, edit, and delete posts on the social media platform."
+                },
+                {
+                    "name": "Notification Events",
+                    "description": "This microservice handles notification events."
+                },
+                {
+                    "name": "Search Service",
+                    "description": "The Search Service microservice facilitates searching for users, posts, hashtags, and trending topics."
+                },
+                {
+                    "name": "Analytics Aggregations",
+                    "description": "An offline aggregation service responsible for performing ETL and aggregation queries."
+                },
+                {
+                    "name": "Friendship Service",
+                    "description": "The Friendship Service microservice manages friend connections between users."
+                },
+                {
+                    "name": "Content Moderation",
+                    "description": "The Content Moderation microservice operates on async events to ensures that user-generated content complies with the platform's community guidelines."
+                },
+                {
+                    "name": "Messaging Service",
+                    "description": "The Messaging Service microservice enables users to send direct messages to each other."
+                },
+                {
+                    "name": "Recommendation Engine",
+                    "description": "This is an offline service, analyzing user behavior, preferences, and interactions to provide personalized content recommendations."
+                },
+                {
+                    "name": "Authentication Service",
+                    "description": "The Authentication Service microservice handles user authentication and security."
+                },
+                {
+                    "name": "Group Management",
+                    "description": "The Group Management microservice allows users to create, join, and manage groups on the social media platform."
+                },
+                {
+                    "name": "Privacy Settings",
+                    "description": "The Privacy Settings microservice enables users to customize their privacy preferences and control who can view their profile and content."
+                },
+                {
+                    "name": "Geolocation Service",
+                    "description": "The Geolocation Service microservice utilizes location data to enable features like check-ins, location-based posts, and nearby friend suggestions."
+                },
+                {
+                    "name": "Hashtag Service",
+                    "description": "The Hashtag Service microservice handles the tagging and categorization of posts using hashtags."
+                },
+                {
+                    "name": "Advertising Platform",
+                    "description": "The Advertising Platform microservice enables targeted advertising on the social media app."
+                },
+                {
+                    "name": "Event Management",
+                    "description": "The Event Management microservice allows users to create and manage events on the social media platform."
+                },
+                {
+                    "name": "Content Sharing",
+                    "description": "The Content Sharing microservice enables users to share posts, photos, and videos on other social media platforms."
+                },
+                {
+                    "name": "Real-time Feeds",
+                    "description": "The Real-time Feeds microservice delivers real-time updates to users' feeds, ensuring that they stay up to date with the latest posts, comments, and activities."
+                },
+                {
+                    "name": "Data Analytics",
+                    "description": "The Data Analytics microservice collects and analyzes data from user interactions, posts, and engagement metrics."
+                },
+                {
+                    "name": "Audio/Video Streaming",
+                    "description": "The Audio/Video Streaming microservice enables users to stream and share live audio and video content on the social media platform."
+                },
+                {
+                    "name": "Gamification Service",
+                    "description": "The Gamification Service microservice introduces game-like elements and rewards to enhance user engagement on the social media app."
+                },
+                {
+                    "name": "In-app Purchases",
+                    "description": "The In-app Purchases microservice enables users to make purchases within the social media app."
+                },
+                {
+                    "name": "Influencer Collaboration",
+                    "description": "The Influencer Collaboration microservice facilitates collaborations between social media influencers and brands."
+                },
+                {
+                    "name": "Content Curation",
+                    "description": "The Content Curation microservice curates and recommends high-quality and relevant content to users."
+                },
+                {
+                    "name": "Gamified Challenges",
+                    "description": "The Gamified Challenges microservice creates and manages gamified challenges for users on the social media platform."
+                },
+                {
+                    "name": "Polling Service",
+                    "description": "The Polling Service microservice enables users to create and participate in polls on the social media app."
+                },
+                {
+                    "name": "Content Translation",
+                    "description": "The Content Translation microservice allows users to translate posts, comments, and messages into different languages."
+                },
+                {
+                    "name": "Video Editing",
+                    "description": "The Video Editing microservice offers basic video editing features within the social media app."
+                },
+                {
+                    "name": "Emotional Analysis",
+                    "description": "The Emotional Analysis microservice analyzes user-generated content, such as posts and comments, to detect and understand emotions."
+                },
+                {
+                    "name": "Accessibility Service",
+                    "description": "The Accessibility Service microservice ensures that the social media app is accessible to users with disabilities."
+                },
+                {
+                    "name": "In-app Camera",
+                    "description": "The In-app Camera microservice offers a built-in camera feature within the social media app."
+                },
+                {
+                    "name": "Social Listening",
+                    "description": "The Social Listening microservice monitors and analyzes social media conversations and mentions related to the platform."
+                },
+                {
+                    "name": "User Tagging",
+                    "description": "The User Tagging microservice allows users to tag other users in their posts, comments, and photos."
+                },
+                {
+                    "name": "Collaborative Filtering",
+                    "description": "The Collaborative Filtering microservice employs collaborative filtering techniques to recommend content based on user similarities and preferences."
+                },
+                {
+                    "name": "Polling Analytics",
+                    "description": "The Polling Analytics microservice provides analytics and insights related to user polls on the social media platform."
+                },
+                {
+                    "name": "In-app Feedback",
+                    "description": "The In-app Feedback microservice allows users to provide feedback, report issues, and suggest improvements directly within the social media app."
+                },
+                {
+                    "name": "Ad Targeting",
+                    "description": "The Ad Targeting microservice analyzes user data, preferences, and behaviors to target advertisements effectively."
+                },
+                {
+                    "name": "User Verification",
+                    "description": "The User Verification microservice verifies the authenticity and identity of users on the social media platform."
+                },
+                {
+                    "name": "Social Integration",
+                    "description": "The Social Integration microservice provides integration with external social media platforms, allowing users to share their content simultaneously across multiple networks."
+                },
+                {
+                    "name": "Trending Topics",
+                    "description": "The Trending Topics microservice tracks and displays the most popular and trending topics on the social media platform."
+                },
+                {
+                    "name": "Story Sharing",
+                    "description": "The Story Sharing microservice enables users to create and share ephemeral stories consisting of photos, videos, or text."
+                },
+                {
+                    "name": "Automated Captioning",
+                    "description": "The Automated Captioning microservice automatically generates captions for videos and audio content on the social media platform."
+                },
+                {
+                    "name": "Live Polling",
+                    "description": "The Live Polling microservice allows users to create and participate in live polls during events or broadcasts."
+                },
+                {
+                    "name": "Community Guidelines",
+                    "description": "The Community Guidelines microservice outlines and enforces the platform's community guidelines and terms of service."
+                },
+                {
+                    "name": "Content Embedding",
+                    "description": "The Content Embedding microservice allows users to embed social media content, such as posts or videos, on external websites or blogs."
+                },
+                {
+                    "name": "User Insights",
+                    "description": "The User Insights microservice provides aggregated and anonymized insights about user demographics, interests, and engagement patterns."
+                },
+                {
+                    "name": "Ad Performance Analytics",
+                    "description": "The Ad Performance Analytics microservice tracks and analyzes the performance of advertisements on the social media platform."
+                },
+                {
+                    "name": "Content Scheduling",
+                    "description": "The Content Scheduling microservice allows users to schedule posts and content for future publication on the social media platform."
+                },
+                {
+                    "name": "User Rewards",
+                    "description": "The User Rewards microservice implements a rewards and loyalty program for users on the social media app."
+                },
+                {
+                    "name": "Data Export",
+                    "description": "The Data Export microservice allows users to export their data from the social media app for backup or external analysis purposes."
+                }
+            ]
+        ];
+        var services = data[Math.floor(Math.random() * data.length)];
+        document.write('<h1>Amount of services - ' + services.length + '</h1>');
+        document.write('<div class="service-wrapper">');
+        for (var i = 0; i < services.length; i++) {
+            var service = services[i];
+            document.write('<div class="service">\n' +
+                '        <h3>' + service.name + '</h3>\n' +
+                '        <p>' + service.description + '</p>\n' +
+                '    </div>');
+        }
+        document.write('</div>');
+    </script>
+</div>
