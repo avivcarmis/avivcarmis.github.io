@@ -1,4 +1,5 @@
 ---
+medium: https://itnext.io/finding-the-best-go-project-structure-part-1-5290bc1d869d
 date: 2023-05-15 13:12:36
 title: Finding The Best Go Project Structure - Part 1
 description: Exploring structuring approaches
