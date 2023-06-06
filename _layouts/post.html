@@ -36,6 +36,8 @@ layout: default
   {% assign next_posts_size = next_posts | size %}
   {% assign more_in_series_size = more_in_series | size %}
 
+  {% assign more_posts = site.posts | where_exp: "post", "post != page" %}
+
   {% if page.series and next_posts_size > 0 %}
     <h2>Next Posts</h2>
     {% assign next_posts_reverse = next_posts | reverse %}
@@ -45,6 +47,6 @@ layout: default
     {% include post-links.html posts=more_in_series limit=2 %}
   {% else %}
     <h2>More Posts</h2>
-    {% include post-links.html posts=site.posts limit=2 %}
+    {% include post-links.html posts=more_posts limit=2 %}
   {% endif %}
 </div>
