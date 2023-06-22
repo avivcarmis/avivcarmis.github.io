@@ -1,5 +1,4 @@
 ---
-medium: https://medium.com/perimeterx/the-case-for-git-submodules-d3dad05187fb
 date: 2022-05-03 10:03:54
 title: Code Sharing in Microservices Architecture
 description: Leveraging various tools to empower code sharing in a microservices architecture

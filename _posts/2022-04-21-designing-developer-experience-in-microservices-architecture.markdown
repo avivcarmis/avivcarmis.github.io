@@ -1,5 +1,4 @@
 ---
-medium: https://medium.com/perimeterx/designing-developer-experience-in-microservices-architecture-ae311cfca2fa
 date: 2022-04-21 18:14:53
 title: Designing Developer Experience in Microservices Architecture
 description: Key decisions in designing developer experience and development cycle in a microservices architecture

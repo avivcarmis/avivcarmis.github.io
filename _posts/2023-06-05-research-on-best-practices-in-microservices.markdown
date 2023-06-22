@@ -1,5 +1,4 @@
 ---
-medium: https://medium.com/@avivcarmis/research-on-best-practices-in-microservices-65906f16ef8a
 date: 2023-06-05 12:12:45
 title: Research on Best Practices in Microservices
 description: A survey for collecting data on best practices in microservices

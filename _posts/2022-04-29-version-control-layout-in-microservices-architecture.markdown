@@ -1,5 +1,4 @@
 ---
-medium: https://medium.com/perimeterx/version-control-layout-in-microservices-architecture-6766c1f20c92
 date: 2022-04-29 13:12:27
 title: Version Control Layout in Microservices Architecture
 description: The pros and cons of version control layout alternatives

@@ -1,5 +1,4 @@
 ---
-medium: https://itnext.io/what-makes-go-the-best-language-159322c2206a
 date: 2022-10-17 11:13:09
 title: A Proposition For a Better Future For Go
 description: An option for Go to move forwards with

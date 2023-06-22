@@ -1,5 +1,4 @@
 ---
-medium: https://medium.com/perimeterx/testing-strategies-in-microservices-architecture-4d4f47c568d8
 date: 2022-05-08 18:44:25
 title: Testing Strategies in Microservices Architecture
 description: Automated testing in microservices architecture

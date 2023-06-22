@@ -18,11 +18,12 @@ layout: default
 
   <section class="post">
     {{ content }}
-    {% if page.medium %}
-    <div class="comments">
-      Comment on this post at <a href="{{ page.medium }}" class="no-target">Medium</a>
-    </div>
-    {% endif %}
+    <script src="https://utteranc.es/client.js"
+            repo="avivpxi/avivcarmis.com-comments"
+            issue-term="pathname"
+            crossorigin="anonymous"
+            async>
+    </script>
     <hr class="post-list__divider">
   </section>
 </article>
