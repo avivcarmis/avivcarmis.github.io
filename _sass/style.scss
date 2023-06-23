@@ -81,6 +81,7 @@ a:hover {
 
   img {
     width: 100%;
+    border-radius: 7px;
   }
 
   .excerpt {
@@ -1308,5 +1309,38 @@ a.post-link, .tags a, .categories a {
   .btn, .navigation__item a {
     display: block;
     margin-bottom: .4em;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  #comments-light {
+    display: none;
+  }
+  html {
+    .content-wrapper {
+      background: #2b2b2b;
+      color: #bbbbbb;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      color: #eaeaea;
+    }
+    .post-list__post-title {
+      color: #999999;
+    }
+    blockquote, .image-wrapper, .panel-cover, div.highlighter-rouge, .hello, footer, .highlight {
+      background: #1c1c1c;
+    }
+    code {
+      background: #4b4747;
+    }
+    .post-list__divider {
+      border-top: 1px solid #404040;
+    }
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  #comments-dark {
+    display: none;
   }
 }

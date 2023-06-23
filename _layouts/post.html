@@ -18,12 +18,24 @@ layout: default
 
   <section class="post">
     {{ content }}
-    <script src="https://utteranc.es/client.js"
-            repo="avivcarmis/avivcarmis.com-comments"
-            issue-term="pathname"
-            crossorigin="anonymous"
-            async>
-    </script>
+    <div id="comments-light">
+      <script src="https://utteranc.es/client.js"
+              repo="avivcarmis/avivcarmis.com-comments"
+              issue-term="pathname"
+              crossorigin="anonymous"
+              theme="github-light"
+              async>
+      </script>
+    </div>
+    <div id="comments-dark">
+      <script src="https://utteranc.es/client.js"
+              repo="avivcarmis/avivcarmis.com-comments"
+              issue-term="pathname"
+              crossorigin="anonymous"
+              theme="github-dark"
+              async>
+      </script>
+    </div>
     <hr class="post-list__divider">
   </section>
 </article>
