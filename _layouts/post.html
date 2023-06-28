@@ -41,6 +41,17 @@ layout: default
 </article>
 
 <div class="main">
+
+  <blockquote>
+    <p>
+      Hi there 👋<br/>
+      I'm conducting research on best practices in microservices. The results will focus on developer velocity, deployment times, code complexity, and others.<br/><br/>
+      Please fill out a quick survey to view the results - <a style="line-break: anywhere;" href="https://forms.gle/iv9Y1ZzYPBm23RY18" target="_blank">https://forms.gle/iv9Y1ZzYPBm23RY18</a>
+    </p>
+  </blockquote>
+
+  <hr class="post-list__divider">
+
   {% assign same_series = site.posts | where:"series", page.series %}
 
   {% assign next_posts = same_series | where_exp: "post", "post.date > page.date" %}
