@@ -10,7 +10,7 @@ tags: [oop, inheritance, composition, maintainability]
 
 **TL;DR** - this is a story about how I felt forced to give up inheritance and object-oriented programming, and still missed it for a very long time. And why now, half a decade later, I believe that inheritance is an inferior choice in most cases.
 
-*Note: this is a clean version of the post. If you're ok with explicit language, I suggest reading the [original version]({% post_url 2023-06-14-the-tragic-death-of-inheritance %}).*
+*Note: this is a clean version of the post. If you're ok with explicit language, I suggest reading the [original version]({% post_url 2023-07-03-the-tragic-death-of-inheritance %}).*
 
 ### An Embarrassing Change of Hearts
 
