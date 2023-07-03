@@ -1,5 +1,5 @@
 ---
-date: 2023-07-03 11:12:44
+date: 2023-07-03 08:12:44
 title: The Tragic Death of Inheritance (Clean Version)
 description: This is a story about how I gradually fell in love with composition
 image: images/posts/the-tragic-death-of-inheritance/the-tragic-death-of-inheritance.jpg
