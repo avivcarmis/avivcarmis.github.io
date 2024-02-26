@@ -80,7 +80,7 @@
 
 <!-- add copy button -->
 <script>
-  var codeBlocks = document.querySelectorAll('pre.highlight');
+  var codeBlocks = document.querySelectorAll('pre.highlight, figure.highlight');
 
   codeBlocks.forEach(function (codeBlock) {
     var copyButton = document.createElement('button');
@@ -95,7 +95,11 @@
       if (this.className === 'copy') {
         return;
       }
-      var code = codeBlock.querySelector('.rouge-code').innerText.trim();
+      var element = codeBlock.querySelector('.rouge-code');
+      if (!element) {
+        element = codeBlock.querySelector('td.code pre');
+      }
+      var code = element.innerText.trim();
       window.navigator.clipboard.writeText(code);
 
       copyButton.innerHTML = '<i class="icon icon-check"></i><span>Copied</span>';
@@ -187,7 +191,47 @@
 
   });
 
-  var codeBlockLineNumbers = document.querySelectorAll('pre.highlight pre.lineno');
+  codeBlocks = document.querySelectorAll('figure.highlight td.code pre');
+
+  codeBlocks.forEach(function (codeBlock, blockId) {
+    var lines = [];
+    var currentLine = [];
+    codeBlock.childNodes.forEach(function (child) {
+      if (child.nodeType === Node.TEXT_NODE && child.textContent.indexOf('\n') > -1) {
+        var parts = child.textContent.split('\n');
+        for (var i = 0; i < parts.length; i++) {
+          var text = parts[i];
+          if (text) {
+            currentLine.push(document.createTextNode(text));
+          }
+          if (i < parts.length - 1) {
+            lines.push(currentLine);
+            currentLine = [];
+          }
+        }
+      } else {
+        currentLine.push(child);
+      }
+    });
+    lines.push(currentLine);
+
+    codeBlock.innerHTML = '';
+    lines.forEach(function (line, lineId) {
+      var lineElement = document.createElement("span");
+      lineElement.class = 'code-line';
+      lineElement.id = 'block-' + (blockId + 1) + '-line-' + (lineId + 1);
+      line.forEach(function (node) {
+        lineElement.appendChild(node);
+      });
+      codeBlock.appendChild(lineElement);
+      if (lineId < lines.length - 1) {
+        codeBlock.appendChild(document.createTextNode('\n'));
+      }
+    });
+
+  });
+
+  var codeBlockLineNumbers = document.querySelectorAll('pre.highlight pre.lineno, figure.highlight pre.lineno');
 
   codeBlockLineNumbers.forEach(function (block, blockId) {
     var values = block.textContent.split('\n');

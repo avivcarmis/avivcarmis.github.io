@@ -221,7 +221,7 @@ blockquote p:last-child {
   background: rgba(255, 255, 255, 0.1);
 }
 
-div.highlighter-rouge, .hello {
+div.highlighter-rouge, figure.highlight, .hello {
   position: relative;
   padding: 20px;
   font-size: 24px;
@@ -291,7 +291,7 @@ code {
   font-size: .85em;
 }
 
-.rouge-gutter {
+.rouge-gutter, .gutter {
   color: #474952;
   border-right: 3px solid #323232;
 }
@@ -497,6 +497,11 @@ hr {
 
 .post pre {
   width: 95%;
+}
+
+figure.highlight > pre {
+  width: auto;
+  padding: 0;
 }
 
 .post hr {
@@ -1113,7 +1118,7 @@ a.post-link, .tags a, .categories a {
     margin-left: 530px;
   }
 
-  div.highlighter-rouge {
+  div.highlighter-rouge, figure.highlight {
     padding: 1.3em 80px;
     font-size: 21px;
   }
@@ -1333,7 +1338,7 @@ a.post-link, .tags a, .categories a {
     blockquote, .image-wrapper, .panel-cover, div.highlighter-rouge, .hello, footer, .highlight {
       background: #1c1c1c;
     }
-    code {
+    code:not(.language-yaml) {
       background: #4b4747;
     }
     .post-list__divider {
