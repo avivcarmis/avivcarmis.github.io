@@ -6,12 +6,33 @@ layout: default
     <p class="main-description">
         My name is Aviv, I'm a software engineer located in Tel Aviv. I write my worthless opinions to explore new ideas and vent out. The content is never sponsored or paid.
         <br/><br/>
-        I work as a backend architect at <a href="https://www.humansecurity.com/">HUMAN</a>, where we handle huge scales, massive amounts of data, and significant engineering challenges. If you're interested in hearing more, I'm hiring for many different <a href="https://www.humansecurity.com/company/careers">positions</a>. You can reach me <a href="#find">here</a>.
+        I'm the Head of Platform at <a href="https://www.humansecurity.com/">HUMAN</a>, where we handle huge scales, massive amounts of data, and endless engineering challenges. We're looking for the best HUMANs to join our team, we have several <a href="https://www.humansecurity.com/company/careers">open positions</a>, including on my team! <a href="#find">Contact me</a> and let's talk.
     </p>
 </div>
 <div class="main">
     <div class="main-post-list">
-
+        <a href="https://www.youtube.com/watch?v=UAedvkB_Lk8" title="The Tragic Death of Inheritance Talk on GopherCon IL" class="post-link">
+            <div class="preview">
+                <div class="preview__text">
+                    <div class="post-list__post-title post-title">The Tragic Death of Inheritance Talk on GopherCon IL</div>
+                    <p class="excerpt">In this talk, I'll walk you through my journey as a principal architect, from teaching and advocating for inheritance due to its clean and elegant nature to realizing that composition is a superior design choice...</p>
+                </div>
+                <div class="preview__image">
+                    <img src="{{ site.baseurl }}/images/posts/the-tragic-death-of-inheritance/talk.png" alt="The Tragic Death of Inheritance Talk on GopherCon IL">
+                </div>
+            </div>
+        </a>
+        <div class="post-list__meta">
+            <time class="post-list__meta--date date">08 Oct 2024</time>
+            &#8226;
+            <span class="post-list__meta--date date">26 mins</span>
+            &#8226;
+            <span class="post-meta__tags">
+                <a href="{{ site.baseurl }}/categories/#inheritance">inheritance</a>,
+                <a href="{{ site.baseurl }}/categories/#composition">composition</a>
+            </span>
+        </div>
+        <hr class="post-list__divider">
         {% assign list = site.posts %}
         {% include post-links.html posts=list %}
 
