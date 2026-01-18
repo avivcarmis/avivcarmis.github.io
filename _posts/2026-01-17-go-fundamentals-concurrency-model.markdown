@@ -80,7 +80,7 @@ The syntax is more complex, but are there other issues?
 
 **Async applications must not use blocking functions on async threads**, otherwise they completely freeze. This was a painful lesson learned with Java's Vertx framework - a single thread event loop architecture similar to NodeJS.
 
-![Single Thread Architecture](../images/posts/go-fundamentals/single-thread-architecture.png)
+![Single Thread Architecture](/images/posts/go-fundamentals/single-thread-architecture.png)
 
 In this type of runtime, everything must be async, otherwise you block the main thread. Sometimes it's hard to tell if something is async or blocking, and if you miss that distinction, it can have **deadly effects** on production systems.
 
@@ -100,7 +100,7 @@ cursorStage.thenCompose(StatementResultCursor::listAsync).whenComplete((records,
 
 Let's inspect the API docs. Do you understand if the `GraphDatabase.driver`, which might or might not be doing IO, is actually blocking or not?
 
-![Neo4J Java Driver API Docs](../images/posts/go-fundamentals/neo4j-api-docs.png)
+![Neo4J Java Driver API Docs](/images/posts/go-fundamentals/neo4j-api-docs.png)
 
 All those major languages have these kinds of problems.<br/>
 What about other languages? Other concurrency models? What about **JavaScript**?
@@ -143,7 +143,7 @@ function fetchData() {
 
 Now we have 2 concurrency models, which results in APIs that look like this to support both:
 
-![MongoDB Official Node Driver](../images/posts/go-fundamentals/mongodb-official-node-driver.png)
+![MongoDB Official Node Driver](/images/posts/go-fundamentals/mongodb-official-node-driver.png)
 
 ### Async/Await
 
@@ -242,9 +242,9 @@ function promisify(callbackFn) {
 
 So we end up with wrapper libraries for translating between concurrency models.
 
-![A Popular NPM Promise Wrapper Library](../images/posts/go-fundamentals/promise-wrapper-library.png)
+![A Popular NPM Promise Wrapper Library](/images/posts/go-fundamentals/promise-wrapper-library.png)
 
-For instance, the default NodeJS native library is callback based. In v10 they introduced an altenative, promise based one. To add to the noise, there's also a blocking version of those. As we said, in most production use cases, using it can lead to huge problems.
+For instance, the default NodeJS native library is callback based. In v10 they introduced an alternative, promise based one. To add to the noise, there's also a blocking version of those. As we said, in most production use cases, using it can lead to huge problems.
 
 ### JavaScript Architecture Limitations
 
@@ -252,7 +252,7 @@ But this is not the end of the story.
 
 Single thread architectures are not only vulnerable to blocking functions. They're also **vulnerable to long processing functions** due to lack of **preemption**.
 
-![Single Thread Architecture](../images/posts/go-fundamentals/single-thread-architecture.png)
+![Single Thread Architecture](/images/posts/go-fundamentals/single-thread-architecture.png)
 
 This means any CPU intensive operation, or any long processing function immediately affects the **performance of the entire process**.
 
@@ -308,7 +308,7 @@ public class ThreadStressTest {
 ```
 
 This is getting out of memory on a standard personal computer after several thousand threads have fired.
-![Out of Memory](../images/posts/go-fundamentals/out-of-memory-running-thousands-of-threads.png)
+![Out of Memory](/images/posts/go-fundamentals/out-of-memory-running-thousands-of-threads.png)
 
 Here's the equivalent Go code:
 
@@ -329,19 +329,19 @@ func main() {
 
 Here it is running on my own computer with 5k goroutines:
 
-![5k Gouroutines - Success After 19ms](../images/posts/go-fundamentals/test-goroutines-5k.png)
+![5k Goroutines - Success After 19ms](/images/posts/go-fundamentals/test-goroutines-5k.png)
 
 Can we do it with 10k?
 
-![10k Gouroutines - Success After 31ms](../images/posts/go-fundamentals/test-goroutines-10k.png)
+![10k Goroutines - Success After 31ms](/images/posts/go-fundamentals/test-goroutines-10k.png)
 
 Can we do it with 100k?
 
-![100k Gouroutines - Success After 377ms](../images/posts/go-fundamentals/test-goroutines-100k.png)
+![100k Goroutines - Success After 377ms](/images/posts/go-fundamentals/test-goroutines-100k.png)
 
 Can we do it with 1M?
 
-![1M Gouroutines](../images/posts/go-fundamentals/test-goroutines-1m.png)
+![1M Goroutines](/images/posts/go-fundamentals/test-goroutines-1m.png)
 
 My machine got loaded for a second or two, but completed the task at 4.6 seconds!
 
@@ -353,7 +353,7 @@ A fully consistent concurrency model. It always looks and performs the same.
 
 ## Race Conditions and Memory Model
 
-![Race Condition](../images/posts/go-fundamentals/race-condition.png)
+![Race Condition](/images/posts/go-fundamentals/race-condition.png)
 
 ### Race Conditions in Go
 
@@ -445,7 +445,7 @@ func main() {
 <summary>Click to reveal answer</summary>
 <div markdown="1">
 
-Nothing suspicious on the surface. This is the **third type**. Setting `value = i` is an atomic operation so the values on the other thread are reasonable. However, this is still a race condition and is unsafe.
+Nothing suspicious on the surface. This is the **third type**. The observable behavior seems fine - values printed appear reasonable. However, this is still a race condition and is **undefined behavior**. Simple int assignment is NOT guaranteed to be atomic in Go's memory model.
 
 </div>
 </details>
@@ -466,7 +466,7 @@ The stronger the guarantees are, the less optimizations the compiler is allowed 
 
 **C++ memory model of 2011** took the other side of the trade-off, making no guarantees whatsoever on any racy process. This allows compilers to implement amazing optimizations, but when compiling racy code, they can literally do **anything**.
 
-![C++ Race Condition Guarantees](../images/posts/go-fundamentals/cpp-race-condition-guarantees.png)
+![C++ Race Condition Guarantees](/images/posts/go-fundamentals/cpp-race-condition-guarantees.png)
 
 **Go's memory model** is a **middle ground** between these examples. It provides enough guarantees for programs to behave as you expect them, while allowing compilers to implement a wide variety of optimizations.
 

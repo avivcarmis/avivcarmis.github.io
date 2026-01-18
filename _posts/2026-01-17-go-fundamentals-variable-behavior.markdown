@@ -283,9 +283,9 @@ func appendSuffixToSliceElements(slice []string, suffix string) []string {
 }
 ```
 
-Empty slices behave like `nil` (**with the exception of json**), and they perform better.
+Empty slices behave like `nil` (with one exception, JSON marshalling produce `null` instead of `[]`), but the performance is better.
 
-This is a bit better, but still has bad performance (append has `O(n)` complexity):
+This is a bit better, but still has bad performance when the slice grows beyond its capacity, causing repeated reallocations:
 
 ```go
 func appendSuffixToSliceElements(slice []string, suffix string) []string {
@@ -443,6 +443,8 @@ Output:
 ```
 you are younger than 18
 ```
+
+Wait, what? Age 19 should pass validation! This is the bug - the nil interface pitfall in action.
 
 In Go, `error` is a **builtin** interface:
 

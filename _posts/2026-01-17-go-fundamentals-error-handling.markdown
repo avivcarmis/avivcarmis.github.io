@@ -139,7 +139,7 @@ func consumerExample() {
     err := producerExample("user123")
     if err != nil {
         if e, ok := err.(*InvalidUserError); ok {
-            log.Info("user %s doesn't exist, message: %v", e.UserID, e.Error())
+            log.Infof("user %s doesn't exist, message: %v", e.UserID, e.Error())
         } else {
             log.Errorf("got error %v", err)
         }
@@ -374,7 +374,8 @@ func (u *UserService) AddUser(email, password, firstName, lastName string) {
         if errors.Is(err, redis.Nil) {
             // TODO alert our dedicated redis experts team who will happily assist
         }
-        if errors.As(err, &SaveUserError{}) {
+        var saveErr *SaveUserError
+        if errors.As(err, &saveErr) {
             // TODO alert our enthusiastic user-management team who are always on the lookout for such issues
         }
         logrus.Errorf("could not save user: %s", err.Error())
