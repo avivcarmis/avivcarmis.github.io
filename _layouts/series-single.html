@@ -1,0 +1,15 @@
+---
+layout: default
+---
+<div class="main">
+  {% assign series_posts = site.posts | where: "series", page.name | sort: "date" %}
+  {% assign first_post = series_posts | first %}
+  {% assign last_post = series_posts | last %}
+  {% assign post_count = series_posts | size %}
+
+  <h1>{{ page.title }}</h1>
+  <p class="series-description">{{ page.description }}</p>
+  <p class="series-meta">{{ post_count }} articles &bull; {{ first_post.date | date: "%-d %b %Y" }} - {{ last_post.date | date: "%-d %b %Y" }}</p>
+
+  {% include post-links.html posts=series_posts %}
+</div>

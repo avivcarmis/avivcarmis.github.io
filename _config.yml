@@ -16,6 +16,12 @@ defaults:
       type: 'posts'
     values:
         layout: 'post'
+  -
+    scope:
+      path: ''
+      type: 'series'
+    values:
+        layout: 'series-single'
 
 # Build settings
 destination: _site
@@ -42,4 +48,9 @@ kramdown:
       start_line: 1
 
 plugins: ['jekyll-paginate']
+
+collections:
+  series:
+    output: true
+    permalink: /series/:name/
 exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'LICENSE', 'docker-compose.yml', '.gitignore']

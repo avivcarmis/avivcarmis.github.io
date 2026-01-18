@@ -1,0 +1,49 @@
+---
+layout: default
+---
+<div class="main">
+  <h1>Series</h1>
+
+  <ol class="post-list">
+    {% for series in site.series %}
+      {% assign series_posts = site.posts | where: "series", series.name | sort: "date" %}
+      {% assign first_post = series_posts | first %}
+      {% assign last_post = series_posts | last %}
+      {% assign post_count = series_posts | size %}
+
+      {% if post_count > 0 %}
+      <li>
+        <a href="{{ series.url }}" title="{{ series.title }}" class="post-link">
+          <div class="preview">
+            <div class="preview__text">
+              <div class="post-list__post-title post-title">{{ series.title }}</div>
+              <p class="excerpt">{{ series.description }}</p>
+            </div>
+            <div class="preview__image">
+              <img src="{{ site.baseurl }}/{{ first_post.image }}" alt="{{ series.title }}">
+            </div>
+          </div>
+        </a>
+        <div class="post-list__meta">
+          <time class="post-list__meta--date date">{{ last_post.date | date: "%-d %b %Y" }}</time>
+          &#8226;
+          <span class="post-list__meta--date date">{{ post_count }} articles</span>
+          &#8226;
+          <span class="post-meta__tags">
+            {% assign all_categories = "" | split: "" %}
+            {% for post in series_posts %}
+              {% for cat in post.categories %}
+                {% unless all_categories contains cat %}
+                  {% assign all_categories = all_categories | push: cat %}
+                {% endunless %}
+              {% endfor %}
+            {% endfor %}
+            {% for category in all_categories limit:2 %}<a href="{{ site.baseurl }}/categories/#{{ category }}">{{ category }}</a>{% if forloop.last == false %}, {% endif %}{% endfor %}
+          </span>
+        </div>
+        <hr class="post-list__divider">
+      </li>
+      {% endif %}
+    {% endfor %}
+  </ol>
+</div>

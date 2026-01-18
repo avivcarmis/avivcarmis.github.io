@@ -1402,9 +1402,23 @@ a.post-link, .tags a, .categories a {
   }
 }
 
+.series-description {
+  color: #666666;
+  margin-bottom: 0.5em;
+}
+
+.series-meta {
+  font-size: 14px;
+  color: #999999;
+  margin-bottom: 2em;
+}
+
 @media (prefers-color-scheme: dark) {
   #comments-light {
     display: none;
+  }
+  .series-description {
+    color: #999999;
   }
   html {
     body {
