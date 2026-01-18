@@ -9,10 +9,15 @@ series: goat
 ---
 This is a piece concluding a 3-article series with a proposition for a better future for Go. In the previous articles, we [discussed the stronger sides of the language]({% post_url 2022-10-17-what-makes-go-the-best-language %}) and [presented the problematic ones]({% post_url 2022-10-17-we-need-to-talk-about-the-bad-sides-of-go %}). If you missed those, I suggest glancing back as they provide an important context for this one.
 
-#### More in this series
-*   [What Makes Go the Best Language]({% post_url 2022-10-17-what-makes-go-the-best-language %})
-*   [We Need To Talk About The Bad Sides of Go]({% post_url 2022-10-17-we-need-to-talk-about-the-bad-sides-of-go %})
-*   **A Proposition For a Better Future**
+<div class="series-nav">
+  <div class="series-nav__title">The Good, Bad & Future of Go</div>
+  <div class="series-nav__subtitle">Article 3 of 3</div>
+  <div class="series-nav__list">
+    <a href="/what-makes-go-the-best-language" class="series-nav__item">1. What Makes Go the Best Language</a>
+    <a href="/we-need-to-talk-about-the-bad-sides-of-go" class="series-nav__item">2. The Bad Sides of Go</a>
+    <span class="series-nav__item--current">3. A Proposition For a Better Future ← You are here</span>
+  </div>
+</div>
 
 If you combine community conventions and the naming problems with async return value problems presented in the previous article, you end up with **hugely popular libraries** shipping code with complex, 100+ line functions, using one-letter undocumented variables, declared at the other side of the package. This is extremely **unreadable and unmaintainable, and surprisingly common**. In addition, as opposed to other modern languages, Go doesn’t provide any kind of runtime value safety. This results in many **value-related runtime issues** which can easily be avoided.
 

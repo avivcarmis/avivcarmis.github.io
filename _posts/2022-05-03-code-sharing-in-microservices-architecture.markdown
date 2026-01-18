@@ -7,13 +7,18 @@ categories: [microservices, architecture, developer-experience]
 tags: [microservices, architecture, developer-experience, monorepo, package-manager, git-submodules]
 series: developer-experience-in-microservices
 ---
-TL;DR - This is a story of leveraging various tools to **empower microservices architecture**, how we use it at [HUMAN](https://humansecurity.com/), and when to use and not use it. 💪
+TL;DR - This is a story of leveraging various tools to **empower microservices architecture**, how we use it at [HUMAN](https://humansecurity.com/), and when to use and not use it.
 
-\* This is part 2 of a 3 piece article series discussing key decisions in designing developer experience and development cycle for teams in a microservices architecture. 💡🚀
-- [Designing Developer Experience in Microservices Architecture (intro)]({% post_url 2022-04-21-designing-developer-experience-in-microservices-architecture %})
-- [Version Control Layout in Microservices Architecture (pt. I)]({% post_url 2022-04-29-version-control-layout-in-microservices-architecture %})
-- **Code Sharing in Microservices Architecture (pt. II)**
-- [Testing Strategies in Microservices Architecture (pt. III)]({% post_url 2022-05-08-testing-strategies-in-microservices-architecture %})
+<div class="series-nav">
+  <div class="series-nav__title">Developer Experience in Microservices</div>
+  <div class="series-nav__subtitle">Article 3 of 4</div>
+  <div class="series-nav__list">
+    <a href="/designing-developer-experience-in-microservices-architecture" class="series-nav__item">1. Introduction</a>
+    <a href="/version-control-layout-in-microservices-architecture" class="series-nav__item">2. Version Control Layout</a>
+    <span class="series-nav__item--current">3. Code Sharing ← You are here</span>
+    <a href="/testing-strategies-in-microservices-architecture" class="series-nav__item">4. Testing Strategies</a>
+  </div>
+</div>
 
 ## Code Sharing
 

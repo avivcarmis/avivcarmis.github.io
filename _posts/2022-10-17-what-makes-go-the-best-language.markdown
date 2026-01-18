@@ -8,12 +8,17 @@ tags: [go, safety, naming, error-handling, concurrency]
 series: goat
 ---
 
-This is a story about the good and the bad sides of the Go programming language, about it being a time for a change, and about how carefully such a change must be handled. This is the first part of a 3-article series. In this piece, we’re going to set the scene and discuss why, for many use cases, Go can be the best choice. 💡⭐
+This is a story about the good and the bad sides of the Go programming language, about it being a time for a change, and about how carefully such a change must be handled. In this piece, we're going to set the scene and discuss why, for many use cases, Go can be the best choice.
 
-#### In This Series
-*   **What Makes Go the Best Language**
-*   [We Need To Talk About The Bad Sides of Go]({% post_url 2022-10-17-we-need-to-talk-about-the-bad-sides-of-go %})
-*   [A Proposition For a Better Future]({% post_url 2022-10-17-a-proposition-for-a-better-future-for-go %})
+<div class="series-nav">
+  <div class="series-nav__title">The Good, Bad & Future of Go</div>
+  <div class="series-nav__subtitle">Article 1 of 3</div>
+  <div class="series-nav__list">
+    <span class="series-nav__item--current">1. What Makes Go the Best Language ← You are here</span>
+    <a href="/we-need-to-talk-about-the-bad-sides-of-go" class="series-nav__item">2. The Bad Sides of Go</a>
+    <a href="/a-proposition-for-a-better-future-for-go" class="series-nav__item">3. A Proposition For a Better Future</a>
+  </div>
+</div>
 
 The Go programming language is exploding with growth these last several years. Big companies, as well as small start-ups warmly adopt it, it’s getting as close as it can to being a [standard language](https://thenewstack.io/go-language-fuels-cloud-native-development/) for cloud-native systems. It’s also been the most desired language to learn for several years in a row ([HackerRank study, 2020](https://www.hackerrank.com/research/developer-skills/2020)) and even the fastest growing language (according to [OSS study over GitHub repositories, 2022](https://ossinsight.io/blog/explore-deep-in-4.6-billion-github-events/#go-the-new-favorite-and-the-fastest-growing-programming-language)).
 

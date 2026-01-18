@@ -7,13 +7,18 @@ categories: [microservices, architecture, developer-experience, version-control]
 tags: [microservices, architecture, developer-experience, monorepo, multirepo]
 series: developer-experience-in-microservices
 ---
-TL;DR - this is a discussion about the pros and cons of version control layout alternatives. There is a ton of reading material regarding the pros and cons of monorepo vs. multirepo. In this article, I intend to argue that the **decision should be derived mainly from production architecture**. 🤔
+TL;DR - this is a discussion about the pros and cons of version control layout alternatives. There is a ton of reading material regarding the pros and cons of monorepo vs. multirepo. In this article, I intend to argue that the **decision should be derived mainly from production architecture**.
 
-\* This is part 1 of a 3 piece article series discussing key decisions in designing developer experience and development cycle for teams in a microservices architecture. 💡🚀
-- [Designing Developer Experience in Microservices Architecture (intro)]({% post_url 2022-04-21-designing-developer-experience-in-microservices-architecture %})
-- **Version Control Layout in Microservices Architecture (pt. I)**
-- [Code Sharing in Microservices Architecture (pt. II)]({% post_url 2022-05-03-code-sharing-in-microservices-architecture %})
-- [Testing Strategies in Microservices Architecture (pt. III)]({% post_url 2022-05-08-testing-strategies-in-microservices-architecture %})
+<div class="series-nav">
+  <div class="series-nav__title">Developer Experience in Microservices</div>
+  <div class="series-nav__subtitle">Article 2 of 4</div>
+  <div class="series-nav__list">
+    <a href="/designing-developer-experience-in-microservices-architecture" class="series-nav__item">1. Introduction</a>
+    <span class="series-nav__item--current">2. Version Control Layout ← You are here</span>
+    <a href="/code-sharing-in-microservices-architecture" class="series-nav__item">3. Code Sharing</a>
+    <a href="/testing-strategies-in-microservices-architecture" class="series-nav__item">4. Testing Strategies</a>
+  </div>
+</div>
 
 ## Version Control Layout
 

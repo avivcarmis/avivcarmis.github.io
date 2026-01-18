@@ -36,6 +36,11 @@ body {
   word-break: break-word;
 }
 
+.post details summary {
+  cursor: pointer;
+  color: #4d4d4d;
+}
+
 .main {
   margin: 0 20px;
   max-width: none;
@@ -643,6 +648,77 @@ figure.highlight > pre {
   }
 }
 
+.series-nav {
+  background: #faf6f6;
+  border-left: 4px solid #ae912c;
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin: 24px 0;
+  box-sizing: border-box;
+
+  .series-nav__title {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #ae912c;
+    margin-bottom: 4px;
+    font-weight: 600;
+  }
+
+  .series-nav__subtitle {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 16px;
+  }
+
+  .series-nav__list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .series-nav__item {
+    color: #666;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.03);
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.07);
+      color: #ae912c;
+    }
+  }
+
+  .series-nav__item--current {
+    color: #ae912c;
+    padding: 8px 12px;
+    border-radius: 4px;
+    background: rgba(174, 145, 44, 0.12);
+    font-weight: 600;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .series-nav {
+    background: #1c1c1c;
+
+    .series-nav__item {
+      color: #bbb;
+      background: rgba(255, 255, 255, 0.05);
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.1);
+        color: #ae912c;
+      }
+    }
+
+    .series-nav__item--current {
+      background: rgba(174, 145, 44, 0.15);
+    }
+  }
+}
+
 .post h1 .header-link,
 .post h2 .header-link,
 .post h3 .header-link,
@@ -1103,6 +1179,12 @@ a.post-link, .tags a, .categories a {
     max-width: 800px;
   }
 
+  .series-nav {
+    margin-left: 80px;
+    margin-right: 80px;
+    max-width: 800px;
+  }
+
   .post hr {
     display: block;
     width: 30%;
@@ -1325,6 +1407,9 @@ a.post-link, .tags a, .categories a {
     display: none;
   }
   html {
+    body {
+      background: #2b2b2b;
+    }
     .content-wrapper {
       background: #2b2b2b;
       color: #bbbbbb;
@@ -1343,6 +1428,9 @@ a.post-link, .tags a, .categories a {
     }
     .post-list__divider {
       border-top: 1px solid #404040;
+    }
+    .post details summary {
+      color: #767676;
     }
   }
 }

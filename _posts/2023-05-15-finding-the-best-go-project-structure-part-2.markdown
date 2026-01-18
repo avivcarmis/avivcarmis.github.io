@@ -9,7 +9,14 @@ series: go-project-structure
 ---
 TL;DR: This is a story about the internal journey we had in [HUMAN](https://www.humansecurity.com/) Security to find the **best project structure for Go**, the decisions we've made, and the conclusions we've drawn. We've created an open-source [template repository](https://github.com/PerimeterX/go-project-structure) for the final structure, and a branch containing an [example project](https://github.com/PerimeterX/go-project-structure/tree/example) alongside. To use this template, fork the repository or [use it as a template](https://github.com/PerimeterX/go-project-structure/generate). To learn more about it, keep reading.
 
-> This is the second part of the story, for now. In the [first part]({% post_url 2023-05-15-finding-the-best-go-project-structure-part-1 %}), we described how we came to define our structuring approach, what made us change our minds, and what our final decisions were. In this second part, we will discuss architectural design, package structure, and directory structure. Let's get to it.
+<div class="series-nav">
+  <div class="series-nav__title">Go Project Structure Series</div>
+  <div class="series-nav__subtitle">Article 2 of 2</div>
+  <div class="series-nav__list">
+    <a href="/finding-the-best-go-project-structure-part-1" class="series-nav__item">1. Exploring Structuring Approaches</a>
+    <span class="series-nav__item--current">2. Architectural Design & Directory Structure ← You are here</span>
+  </div>
+</div>
 
 ### Structuring Architecture
 

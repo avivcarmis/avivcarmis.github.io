@@ -7,12 +7,17 @@ categories: [go, programming-languages]
 tags: [go, safety, naming, error-handling, concurrency]
 series: goat
 ---
-This is the second part of a 3-article series. This is a story about the downsides of the Go programming language, the part about it that makes us less productive and our codebases less safe and less maintainable. And about propositions for improvement. 🌟
+This is a story about the downsides of the Go programming language, the part about it that makes us less productive and our codebases less safe and less maintainable. And about propositions for improvement.
 
-#### More in this series
-*   [What Makes Go the Best Language]({% post_url 2022-10-17-what-makes-go-the-best-language %})
-*   **We Need To Talk About The Bad Sides of Go**
-*   [A Proposition For a Better Future]({% post_url 2022-10-17-a-proposition-for-a-better-future-for-go %})
+<div class="series-nav">
+  <div class="series-nav__title">The Good, Bad & Future of Go</div>
+  <div class="series-nav__subtitle">Article 2 of 3</div>
+  <div class="series-nav__list">
+    <a href="/what-makes-go-the-best-language" class="series-nav__item">1. What Makes Go the Best Language</a>
+    <span class="series-nav__item--current">2. The Bad Sides of Go ← You are here</span>
+    <a href="/a-proposition-for-a-better-future-for-go" class="series-nav__item">3. A Proposition For a Better Future</a>
+  </div>
+</div>
 
 In the [intro to the previous article]({% post_url 2022-10-17-what-makes-go-the-best-language %}) we’ve presented a conflict — Go has an aggressive tendency to remain simple. Although it has tremendous upsides, it prevents Gophers from getting more productive. Then, we discussed the stronger sides of the language and everything that makes it unique. In this one, we’ll dive right into discussing and presenting the **problematic sides of Go**. If you’ve missed the [previous one]({% post_url 2022-10-17-what-makes-go-the-best-language %}), I suggest glancing back as it provides an important context for the full-on rant that’s coming your way. Ready? Let’s start.
 

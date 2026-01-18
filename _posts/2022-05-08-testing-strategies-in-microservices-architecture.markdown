@@ -7,13 +7,18 @@ categories: [microservices, architecture, developer-experience, testing]
 tags: [microservices, architecture, developer-experience, testing, rollout]
 series: developer-experience-in-microservices
 ---
-TL;DR - this article discusses automated testing in microservices architecture, how to keep it as simple as possible, and how to gain maximum reliability during the rollout of big changes. 👩‍🎓
+TL;DR - this article discusses automated testing in microservices architecture, how to keep it as simple as possible, and how to gain maximum reliability during the rollout of big changes.
 
-\* This is part 3 of a 3 piece article series discussing key decisions in designing developer experience and development cycle for teams in a microservices architecture. 💡🚀
-- [Designing Developer Experience in Microservices Architecture (intro)]({% post_url 2022-04-21-designing-developer-experience-in-microservices-architecture %})
-- [Version Control Layout in Microservices Architecture (pt. I)]({% post_url 2022-04-29-version-control-layout-in-microservices-architecture %})
-- [Code Sharing in Microservices Architecture (pt. II)]({% post_url 2022-05-03-code-sharing-in-microservices-architecture %})
-- **Testing Strategies in Microservices Architecture (pt. III)**
+<div class="series-nav">
+  <div class="series-nav__title">Developer Experience in Microservices</div>
+  <div class="series-nav__subtitle">Article 4 of 4</div>
+  <div class="series-nav__list">
+    <a href="/designing-developer-experience-in-microservices-architecture" class="series-nav__item">1. Introduction</a>
+    <a href="/version-control-layout-in-microservices-architecture" class="series-nav__item">2. Version Control Layout</a>
+    <a href="/code-sharing-in-microservices-architecture" class="series-nav__item">3. Code Sharing</a>
+    <span class="series-nav__item--current">4. Testing Strategies ← You are here</span>
+  </div>
+</div>
 
 ## Testing Strategies
 

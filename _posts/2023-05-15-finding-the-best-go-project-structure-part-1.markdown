@@ -9,7 +9,14 @@ series: go-project-structure
 ---
 TL;DR: This is a story about the journey we've been on at [HUMAN](https://www.humansecurity.com/) Security to find the **best project structure for Go**, what decisions we've made based on our exploration, and the conclusions we've drawn. We've created an open-source [template repository](https://github.com/PerimeterX/go-project-structure) for the final structure, and a branch containing a tiny [example project](https://github.com/PerimeterX/go-project-structure/tree/example) alongside. To use this template, fork the repository or [use it as a template](https://github.com/PerimeterX/go-project-structure/generate). To learn more about it, keep reading.
 
-> This is part one of a two-part series about our work with Go. In this post, we're going to explore the structuring approach, the experience we've had with it, and what made us change our minds.
+<div class="series-nav">
+  <div class="series-nav__title">Go Project Structure Series</div>
+  <div class="series-nav__subtitle">Article 1 of 2</div>
+  <div class="series-nav__list">
+    <span class="series-nav__item--current">1. Exploring Structuring Approaches ← You are here</span>
+    <a href="/finding-the-best-go-project-structure-part-2" class="series-nav__item">2. Architectural Design & Directory Structure</a>
+  </div>
+</div>
 
 It's been almost four years since I published [an article]({% post_url 2019-05-19-ok-lets-go-three-approaches-to-structuring-go-code %}) about Go project structure. At the time, I was approaching my one-year mark as a Gopher, and the article reflected my thoughts at the time. I felt there was a lack of structural guidelines and standards from the community which led to confusion and stifled my productivity. Apparently, this resonated well with others. Since then, the article has been read by thousands of people, appeared on [golang-weekly](https://golangweekly.com/issues/266), been [translated into Russian](https://habr.com/ru/company/piter/blog/516186/), and read by several thousands more, appearing on the front page of [related Google searches](https://www.google.com/search?q=structure+go+code).
 
