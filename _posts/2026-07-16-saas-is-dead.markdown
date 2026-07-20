@@ -21,7 +21,7 @@ Normally, having to explain a joke is a bad sign, but since you couldn't see my 
 
 Thing is, all those Anthropic news reporters (roughly every other person who posted on LinkedIn in '25-'26) claimed "SaaS is dead" so many times, each time with a different "this is the end of the world as we know it" explosive title, where the underlying statement is always the same: vibe coding has made SaaS irrelevant. Yet again. You never need to pay for online services again. Need something? A 10-minute vibe coding session will solve it for you and save you a lot of money. "SaaS is dead", they confidently declared.
 
-6-18 months into this now. SaaS is dead. Vibe coding did kill it. Not by replacing every online service with a secure, robust, custom solution tailor-made to the specific needs of each person on earth (boy would that be wonderful. Also, boy how naive was I to give them the benefit of the doubt). Vibe coding simply killed it from within. That's the first irony. Have you seen the GitHub status page lately?
+6-18 months into this now. SaaS is dead. Vibe coding did kill it. Not by replacing every online service with a secure, robust, custom solution tailor-made to the specific needs of each person on earth (boy would that be wonderful. Also, boy how naive was I to give them the benefit of the doubt). Vibe coding simply killed it from within. That's the first irony. Everyone vibe codes, SaaS service are down on a weekly basis. Many people are frustrated.
 
 ![Shoutout to @anshuc on Twitter for this punchline I literally LOLed at: "how did the attackers find a large enough uptime window to get in?"](/images/posts/saas-is-dead/github-uptime-roast.png)
 
